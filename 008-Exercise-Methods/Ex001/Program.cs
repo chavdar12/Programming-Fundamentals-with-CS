@@ -13,11 +13,6 @@ internal class Program
 
     private static void PrintSmallestNumber(int first, int second, int third)
     {
-        if (first < second && first < third)
-            Console.WriteLine(first);
-        else if (second < first && second < third)
-            Console.WriteLine(second);
-        else
-            Console.WriteLine(third);
+        Console.WriteLine(Math.Min(first, Math.Min(second, third)));
     }
 }

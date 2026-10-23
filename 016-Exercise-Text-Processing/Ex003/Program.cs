@@ -6,10 +6,11 @@ internal class Program
     {
         var path = Console.ReadLine().Split("\\", StringSplitOptions.RemoveEmptyEntries);
 
-        var file = path[^1].Split('.');
+        var file = path[^1];
+        var dot = file.LastIndexOf('.');
 
-        var template = file[0];
-        var extension = file[1];
+        var template = file[..dot];
+        var extension = file[(dot + 1)..];
 
         Console.WriteLine($"File name: {template}");
         Console.WriteLine($"File extension: {extension}");

@@ -7,20 +7,17 @@ internal class Program
         var end = int.Parse(Console.ReadLine());
 
         Console.WriteLine(
-            string.Join(Environment.NewLine, NumbersWithAtLeastOneOddDigit(NumbersDivideByEight(end))));
+            string.Join(Environment.NewLine, NumbersWithAtLeastOneOddDigit(NumbersWithDigitSumDivisibleByEight(end))));
     }
 
-    private static int[] NumbersDivideByEight(int end)
+    private static int[] NumbersWithDigitSumDivisibleByEight(int end)
     {
-        var result = new int[end];
-        for (var i = 1; i <= end; i++) result[i - 1] = i;
-
-        return result;
+        return Enumerable.Range(1, end).Where(n => n.ToString().Sum(c => c - '0') % 8 == 0).ToArray();
     }
 
-    private static IEnumerable<string?> NumbersWithAtLeastOneOddDigit(object numbersDivideByEight)
+    private static IEnumerable<string?> NumbersWithAtLeastOneOddDigit(int[] numbers)
     {
-        foreach (var number in (int[])numbersDivideByEight)
+        foreach (var number in numbers)
         {
             var currentNumber = number;
             while (currentNumber > 0)

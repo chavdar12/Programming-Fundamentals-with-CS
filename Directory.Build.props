@@ -1,0 +1,6 @@
+<Project>
+  <PropertyGroup>
+    <!-- Judge-style input uses '.' decimals; don't depend on the machine's locale -->
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+</Project>

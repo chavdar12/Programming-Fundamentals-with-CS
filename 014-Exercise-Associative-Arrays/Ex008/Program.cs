@@ -9,7 +9,7 @@ internal class Program
         string input;
         while ((input = Console.ReadLine()) != "End")
         {
-            var cmdArg = input.Split("->", StringSplitOptions.RemoveEmptyEntries);
+            var cmdArg = input.Split(" -> ", StringSplitOptions.RemoveEmptyEntries);
 
             var company = cmdArg[0];
             var idNumber = cmdArg[1];
@@ -24,7 +24,7 @@ internal class Program
         foreach (var (key, students) in data)
         {
             Console.WriteLine(key);
-            foreach (var student in students) Console.WriteLine($"--{student}");
+            foreach (var student in students) Console.WriteLine($"-- {student}");
         }
     }
 }

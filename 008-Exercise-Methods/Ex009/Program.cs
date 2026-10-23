@@ -4,8 +4,8 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var command = Console.ReadLine();
-        PrintPalindrome(command);
+        string? command;
+        while ((command = Console.ReadLine()) != "END") PrintPalindrome(command);
     }
 
     private static void PrintPalindrome(string? command)

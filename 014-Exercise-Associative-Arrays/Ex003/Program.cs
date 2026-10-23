@@ -7,8 +7,8 @@ internal class Program
         var legendary = new Dictionary<string, int>()
         {
             { "shards", 0 },
-            { "motes", 0 },
-            { "fragments", 0 }
+            { "fragments", 0 },
+            { "motes", 0 }
         };
 
         var junk = new Dictionary<string, int>();

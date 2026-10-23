@@ -8,17 +8,18 @@ internal class Program
         var m = int.Parse(Console.ReadLine());
         var y = int.Parse(Console.ReadLine());
 
+        var power = n;
         var counter = 0;
 
-        for (var i = n - m; i >= 0; i -= m)
+        while (power >= m)
         {
+            power -= m;
             counter++;
-            if (i == n * 0.5 && y != 0) i /= y;
 
-            if (i >= m) continue;
-            Console.WriteLine(i);
-            Console.WriteLine(counter);
-            break;
+            if (power * 2 == n && y != 0) power /= y;
         }
+
+        Console.WriteLine(power);
+        Console.WriteLine(counter);
     }
 }

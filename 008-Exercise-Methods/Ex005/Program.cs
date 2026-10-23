@@ -16,8 +16,8 @@ internal class Program
         return first + second;
     }
 
-    private static bool SubtractThirdFromSumOfFirstAndSecond(int sumOfFistAndSecond, int third)
+    private static int SubtractThirdFromSumOfFirstAndSecond(int sumOfFistAndSecond, int third)
     {
-        return sumOfFistAndSecond - third >= 0;
+        return sumOfFistAndSecond - third;
     }
 }

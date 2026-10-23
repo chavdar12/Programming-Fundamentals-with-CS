@@ -6,7 +6,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        const string pattern = @"\+359([ |-])2\1[0-9]{3}\1[0-9]{4}\b";
+        const string pattern = @"\+359([ -])2\1[0-9]{3}\1[0-9]{4}\b";
         var text = Console.ReadLine();
 
         var matches = Regex.Matches(text, pattern);

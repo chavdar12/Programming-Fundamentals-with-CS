@@ -12,6 +12,6 @@ internal class Program
     {
         var vowels = new[] { 'a', 'e', 'i', 'o', 'u' };
 
-        return word.Count(letter => vowels.Contains(letter));
+        return word.Count(letter => vowels.Contains(char.ToLower(letter)));
     }
 }

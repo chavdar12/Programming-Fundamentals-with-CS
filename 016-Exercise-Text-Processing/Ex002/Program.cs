@@ -12,7 +12,7 @@ internal class Program
         string longer;
         string shorter;
 
-        if (string.Compare(first, second, StringComparison.Ordinal) > 0)
+        if (second.Length > first.Length)
         {
             longer = second;
             shorter = first;

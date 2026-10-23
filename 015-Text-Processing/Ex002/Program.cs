@@ -10,9 +10,7 @@ internal class Program
 
         var sb = new StringBuilder();
 
-        foreach (var currWord in input)
-        foreach (var i in currWord)
-            sb.Append(i);
+        foreach (var currWord in input) sb.Insert(sb.Length, currWord, currWord.Length);
 
         Console.WriteLine(sb);
     }

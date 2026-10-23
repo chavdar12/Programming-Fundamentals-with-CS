@@ -10,14 +10,14 @@ internal class Program
         DivideFirstToSecond(CalculateFactorial(first), CalculateFactorial(second));
     }
 
-    private static void DivideFirstToSecond(int calculateFactorial, int i)
+    private static void DivideFirstToSecond(double calculateFactorial, double i)
     {
         Console.WriteLine($"{calculateFactorial / i:F2}");
     }
 
-    private static int CalculateFactorial(int first)
+    private static double CalculateFactorial(int first)
     {
-        var result = 1;
+        var result = 1.0;
         for (var i = 1; i <= first; i++) result *= i;
 
         return result;

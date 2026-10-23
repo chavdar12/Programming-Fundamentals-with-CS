@@ -6,13 +6,13 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var bigNumber = Console.ReadLine();
+        var bigNumber = Console.ReadLine().TrimStart('0');
         var number = int.Parse(Console.ReadLine());
 
         var sb = new StringBuilder();
         var remainder = 0;
 
-        if (number == 0 || bigNumber == "0")
+        if (number == 0 || bigNumber == "")
         {
             Console.WriteLine(0);
             return;

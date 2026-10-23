@@ -21,16 +21,10 @@ internal class Program
                     var startIndex = int.Parse(command[1]);
                     var endIndex = int.Parse(command[2]);
 
-                    switch (startIndex)
-                    {
-                        case < 0 when endIndex >= list.Count:
-                            continue;
-                        case < 0:
-                            startIndex = 0;
-                            break;
-                    }
+                    startIndex = Math.Max(startIndex, 0);
+                    endIndex = Math.Min(endIndex, list.Count - 1);
 
-                    if (endIndex >= list.Count) endIndex = list.Count - 1;
+                    if (startIndex > endIndex) continue;
 
                     var merged = new StringBuilder();
 
@@ -48,17 +42,22 @@ internal class Program
                     var index = int.Parse(command[1]);
                     var partitions = int.Parse(command[2]);
 
-                    if (partitions > list.Count) continue;
-
                     var wordToDivide = list[index];
+                    var partLength = wordToDivide.Length / partitions;
 
-                    var divideArray = new char[wordToDivide.Length];
+                    var parts = new List<string>();
 
-                    for (var i = 0; i <= wordToDivide.Length; i++) divideArray[i] = wordToDivide[i];
+                    // the last part takes the remainder when the word doesn't divide evenly
+                    for (var i = 0; i < partitions - 1; i++) parts.Add(wordToDivide.Substring(i * partLength, partLength));
+                    parts.Add(wordToDivide.Substring((partitions - 1) * partLength));
 
+                    list.RemoveAt(index);
+                    list.InsertRange(index, parts);
                     break;
                 }
             }
         }
+
+        Console.WriteLine(string.Join(" ", list));
     }
 }

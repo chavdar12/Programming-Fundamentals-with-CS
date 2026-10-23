@@ -13,10 +13,14 @@ internal class Program
     private static double CalculateItemSum(string arg)
     {
         var firstLetter = arg[0];
+        var lastLetter = arg[^1];
         var number = double.Parse(arg.Substring(1, arg.Length - 2));
 
-        var firstLetterPosition = char.IsUpper(firstLetter) ? firstLetter - 64 : firstLetter - 96;
+        var firstLetterPosition = char.ToUpper(firstLetter) - 64;
+        var lastLetterPosition = char.ToUpper(lastLetter) - 64;
 
-        return char.IsUpper(firstLetter) ? number / firstLetterPosition : number * firstLetterPosition;
+        number = char.IsUpper(firstLetter) ? number / firstLetterPosition : number * firstLetterPosition;
+
+        return char.IsUpper(lastLetter) ? number - lastLetterPosition : number + lastLetterPosition;
     }
 }

@@ -18,6 +18,6 @@ internal class Program
 
         Console.WriteLine(amountOfMoney >= total
             ? $"The money is enough - it would cost {total:f2}lv."
-            : $" John will need {total - amountOfMoney:f2}lv more.");
+            : $"John will need {total - amountOfMoney:f2}lv more.");
     }
 }

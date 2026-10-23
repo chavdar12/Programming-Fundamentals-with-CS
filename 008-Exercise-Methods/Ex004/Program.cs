@@ -22,7 +22,7 @@ internal class Program
 
     private static bool PasswordContainsLettersAndDigits(string? password)
     {
-        if (password.Any(char.IsLetter) && password.Any(char.IsDigit)) return true;
+        if (password.All(char.IsLetterOrDigit)) return true;
         Console.WriteLine("Password must consist only of letters and digits");
         return false;
     }
